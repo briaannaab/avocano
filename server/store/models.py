@@ -30,7 +30,7 @@ class Product(models.Model):
     active = models.BooleanField()
     discount_percent = models.IntegerField()
     inventory_count = models.IntegerField()
-
+    product_we_love = models.BooleanField(default=false)
     @property
     def discount_saving(self):
         return Decimal(round(float(self.price) * (self.discount_percent / 100), 2))

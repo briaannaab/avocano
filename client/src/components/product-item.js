@@ -167,6 +167,7 @@ export class ProductItem extends LitElement {
       discount_percent,
       image,
       description,
+      product_we_love,
     } = this.productItem || {};
 
     return html`
@@ -182,7 +183,7 @@ export class ProductItem extends LitElement {
             />
           </div>
           <div class="productItemContent">
-            <h2 class="itemTitle">${name}</h2>
+            <h2 class="itemTitle">${product_we_love ? html`<h3 class="productWeLove">💜 Product we love!</h3>` : html``}</h2>
             ${discount_percent > 0
               ? html`<div class="price">
                   <div class="retailPrice">RRP $${price}</div>
